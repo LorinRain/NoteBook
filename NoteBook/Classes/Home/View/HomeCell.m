@@ -7,6 +7,7 @@
 //
 
 #import "HomeCell.h"
+#import "NSString+Lorin.h"
 
 @implementation HomeCell
 {
@@ -65,6 +66,16 @@
     _contenLabel.frame = CGRectMake(cellBg.frame.size.height / 3 + 17, cellBg.frame.size.height / 3 + 8, cellBg.frame.size.width - (cellBg.frame.size.height / 3 + 10) - 20, cellBg.frame.size.height - (cellBg.frame.size.height / 3 + 10) - 10);
     _timeLabel.frame = CGRectMake(cellBg.frame.size.height / 3 + 17, 8, cellBg.frame.size.width - (cellBg.frame.size.height / 3 + 10) - 20, cellBg.frame.size.height / 3 - 10);
     
+}
+
+// 设置cell内容
+- (void)setItem:(Note *)note
+{
+    _note = note;
+    self.timeLabel.text = note.date;
+    // 首页显示的文字，直接从文字部分开始，忽略文字前面的空格或换行
+    NSString *tempText = [note.notedetail stringByTrimmingLeftCharactersInset: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    self.contenLabel.text = tempText;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

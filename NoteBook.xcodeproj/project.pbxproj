@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A6A2C171BD5EAA000F212FD /* NSString+Lorin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A2C161BD5EAA000F212FD /* NSString+Lorin.m */; settings = {ASSET_TAGS = (); }; };
 		5A82CB801B54AE7200A20DDC /* note_paper_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A82CB7F1B54AE7200A20DDC /* note_paper_top@2x.png */; };
 		5AB4DFA01BD4C0B400778DB6 /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4DF9E1BD4C0B400778DB6 /* Note.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		5AB4DFA51BD4C11200778DB6 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4DFA21BD4C11200778DB6 /* Note+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A6A2C151BD5EAA000F212FD /* NSString+Lorin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Lorin.h"; sourceTree = "<group>"; };
+		5A6A2C161BD5EAA000F212FD /* NSString+Lorin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Lorin.m"; sourceTree = "<group>"; };
 		5A82CB7F1B54AE7200A20DDC /* note_paper_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note_paper_top@2x.png"; sourceTree = "<group>"; };
 		5AB4DF9F1BD4C0B400778DB6 /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
 		5AB4DFA11BD4C11200778DB6 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A6A2C141BD5EA8500F212FD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5A6A2C151BD5EAA000F212FD /* NSString+Lorin.h */,
+				5A6A2C161BD5EAA000F212FD /* NSString+Lorin.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		5AB4DF9D1BD4C09900778DB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		5AB944D61B53AF8000C3D12D /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5A6A2C141BD5EA8500F212FD /* Category */,
 				5AB944D71B53AF8000C3D12D /* AppDelegate.h */,
 				5AB944D81B53AF8000C3D12D /* AppDelegate.m */,
 				5AB944D91B53AF8000C3D12D /* main.m */,
@@ -351,6 +364,7 @@
 				5AB944E11B53AFA800C3D12D /* HomeController.m in Sources */,
 				5AB4DFA51BD4C11200778DB6 /* Note+CoreDataProperties.m in Sources */,
 				5AB944EB1B53B4C800C3D12D /* HomeCell.m in Sources */,
+				5A6A2C171BD5EAA000F212FD /* NSString+Lorin.m in Sources */,
 				5AB4DFA01BD4C0B400778DB6 /* Note.xcdatamodeld in Sources */,
 				5AB4DFAA1BD4C21100778DB6 /* NoteTool.m in Sources */,
 				5AB944DB1B53AF8000C3D12D /* main.m in Sources */,

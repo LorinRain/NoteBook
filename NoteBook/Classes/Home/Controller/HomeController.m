@@ -9,7 +9,6 @@
 #import "HomeController.h"
 #import "HomeCell.h"
 #import "NoteDetailController.h"
-#import "NoteTool.h"
 
 @interface HomeController ()
 {
@@ -138,8 +137,7 @@
         cell = [[HomeCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
     }
     
-    cell.contenLabel.text = [(Note *)_dataArray[indexPath.row] notedetail];
-    cell.timeLabel.text = [(Note *)_dataArray[indexPath.row] date];
+    [cell setItem: _dataArray[indexPath.row]];
     
     return cell;
 }
