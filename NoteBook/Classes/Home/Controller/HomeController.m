@@ -153,6 +153,26 @@
     [self.navigationController pushViewController: noteDetail animated: YES];
 }
 
+// 右滑删除
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView beginUpdates];
+    [self.noteTool deleteNote: _dataArray[indexPath.row]];
+    [self.tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation: UITableViewRowAnimationFade];
+    [self reloadData];
+    [self.tableView endUpdates];
+}
+
 #pragma mark - NoteTool
 - (NoteTool *)noteTool
 {
