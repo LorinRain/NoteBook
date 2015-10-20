@@ -153,7 +153,7 @@
     [self.navigationController pushViewController: noteDetail animated: YES];
 }
 
-// 右滑删除
+// 左滑删除
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
