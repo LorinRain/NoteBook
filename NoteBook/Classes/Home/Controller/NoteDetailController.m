@@ -7,8 +7,9 @@
 //
 
 #import "NoteDetailController.h"
+#import "LRActionSheet.h"
 
-@interface NoteDetailController ()
+@interface NoteDetailController ()<LRActionSheetDelegate>
 {
     ///导航栏右边的按钮
     UIButton *rightBarButton;
@@ -218,10 +219,10 @@
     } else if([[button titleForState: UIControlStateNormal] isEqualToString: @"删除"]) {
         // 隐藏键盘
         [self.textView resignFirstResponder];
-        // 删除
-        [_noteTool deleteNote: _note];
-        // 返回前一页
-        [self.navigationController popViewControllerAnimated: YES];
+        // 弹出提示框
+        LRActionSheet *actionSheet = [[LRActionSheet alloc] initWithTitle: @"确定删除此便签？" destroyButtonTitle: @"删除" otherButtonTitles: nil];
+        actionSheet.delegate = self;
+        [actionSheet show];
     }
 }
 
@@ -243,6 +244,17 @@
     }
     
     return _textView;
+}
+
+#pragma mark - LRActionSheet Delegate
+- (void)actionSheet:(LRActionSheet *)actionSheet buttonClickedAtIndex:(NSInteger)index
+{
+    if(index == actionSheet.destructiveButtonIndex) {
+        // 删除
+        [_noteTool deleteNote: _note];
+        // 返回前一页
+        [self.navigationController popViewControllerAnimated: YES];
+    }
 }
 
 - (void)dealloc
