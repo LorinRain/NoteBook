@@ -30,6 +30,13 @@
 {
     self = [super init];
     if(self) {
+        // 动画方式显示
+        CATransition *fadeAnimation = [CATransition animation];
+        fadeAnimation.duration = 0.3;
+        fadeAnimation.type = kCATransitionReveal;
+        [self.layer addAnimation: fadeAnimation forKey: nil];
+        // 背景半透明
+        self.backgroundColor = [UIColor colorWithWhite: 0 alpha: 0.5];
         // 添加手势
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
         tap.numberOfTapsRequired = 1;
@@ -38,6 +45,8 @@
         // 添加下面的弹出框
         actionSheetView = [[UIView alloc] init];
         actionSheetView.backgroundColor = RGBCOLOR(230, 230, 230);
+        actionSheetView.userInteractionEnabled = YES;
+        // 添加动画
         CATransition *animation = [CATransition animation];
         animation.duration = 0.2;
         animation.type = kCATransitionMoveIn;
@@ -149,13 +158,6 @@
 
 - (void)show
 {
-    [UIView animateWithDuration: 0.2 animations:^{
-        // 背景半透明
-        self.backgroundColor = [UIColor colorWithWhite: 0 alpha: 0.5];
-    } completion:^(BOOL finished) {
-        
-    }];
-    
     UIView *window = [UIApplication sharedApplication].keyWindow;
     self.frame = CGRectMake(0, 0, SCREENSIZE.width, SCREENSIZE.height);
     CGFloat actionSheetHeight = actionSheetTopView.frame.size.height + actionSheetBottomView.frame.size.height;

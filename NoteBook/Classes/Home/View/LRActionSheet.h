@@ -13,7 +13,10 @@
 @protocol LRActionSheetDelegate <NSObject>
 
 @optional
-///按钮点击事件
+/*
+ * @brief 按钮点击事件
+ * 按钮点击的时候，提示框自动消失
+ */
 - (void)actionSheet:(LRActionSheet *)actionSheet buttonClickedAtIndex:(NSInteger)index;
 
 @end
